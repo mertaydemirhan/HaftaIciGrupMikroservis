@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34714.143
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Producer.App", "Producer.App\Producer.App.csproj", "{6FAEFC67-CA04-48F3-BEF3-36D5D619FA8E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Producer.App", "Producer.App\Producer.App.csproj", "{6FAEFC67-CA04-48F3-BEF3-36D5D619FA8E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Consumer.App", "Consumer.App\Consumer.App.csproj", "{20661142-4E73-4F3B-B0FB-8B88AD4A4630}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Consumer.App", "Consumer.App\Consumer.App.csproj", "{20661142-4E73-4F3B-B0FB-8B88AD4A4630}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroserviceOne", "MicroserviceOne\MicroserviceOne.csproj", "{00BFFFE9-4D7D-4506-B306-C38088509AED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroserviceTwo", "MicroserviceTwo\MicroserviceTwo.csproj", "{F90B139A-EDE5-495F-8D7D-3049A49446F8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{20661142-4E73-4F3B-B0FB-8B88AD4A4630}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20661142-4E73-4F3B-B0FB-8B88AD4A4630}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20661142-4E73-4F3B-B0FB-8B88AD4A4630}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00BFFFE9-4D7D-4506-B306-C38088509AED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00BFFFE9-4D7D-4506-B306-C38088509AED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00BFFFE9-4D7D-4506-B306-C38088509AED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00BFFFE9-4D7D-4506-B306-C38088509AED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F90B139A-EDE5-495F-8D7D-3049A49446F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F90B139A-EDE5-495F-8D7D-3049A49446F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F90B139A-EDE5-495F-8D7D-3049A49446F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F90B139A-EDE5-495F-8D7D-3049A49446F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

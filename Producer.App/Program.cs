@@ -18,10 +18,12 @@ using var connection = connectionFactory.CreateConnection();
 
 using var channel = connection.CreateModel();
 
+
+channel.BasicAcks += (sender, message) => { Console.WriteLine(message.DeliveryTag); };
+
 //fanout exchange
 channel.ExchangeDeclare("demo-fanout-exchange", ExchangeType.Fanout, true, false, null);
 
-channel.QueueDeclare("myqueue3", true, false, false, null);
 
 channel.ConfirmSelect();
 
@@ -30,46 +32,7 @@ var message = "Hello World";
 var body = Encoding.UTF8.GetBytes(message);
 
 
-Enumerable.Range(1, 100000).ToList()
-    .ForEach(x => { channel.BasicPublish(string.Empty, "myqueue4", false, null, body); });
+channel.BasicPublish("demo-fanout-exchange", string.Empty, false, null, body);
 
-// 
-
-channel.BasicAcks += (sender, message) => { Console.WriteLine(message.DeliveryTag); };
-
-
-try
-{
-    int i = 0;
-    Enumerable.Range(1, 1000).ToList().ForEach(x =>
-    {
-        i++;
-        channel.BasicPublish(string.Empty, "myqueue4", false, null, body);
-        if (i % 30 == 0)
-        {
-            channel.WaitForConfirms();
-        }
-    });
-
-
-    //channel.BasicPublish("demo-fanout-exchange", string.Empty, null, body);
-}
-catch (Exception e)
-{
-    Console.WriteLine(e);
-    throw;
-}
-
-
-try
-{
-    channel.BasicPublish(string.Empty, "myqueue4", false, null, body);
-    channel.WaitForConfirms();
-}
-catch (Exception e)
-{
-    Console.WriteLine(e);
-    throw;
-}
 
 Console.ReadLine();
